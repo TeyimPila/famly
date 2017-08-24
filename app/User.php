@@ -5,11 +5,13 @@ namespace Famly;
 use Hash;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
-use Ramsey\Uuid\Uuid;
 
 class User extends Authenticatable
 {
+    use Uuids;
     use Notifiable;
+
+    protected $primaryKey = 'user_id';
 
     /**
      * The attributes that are mass assignable.
@@ -17,8 +19,16 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'user_id', 'name', 'email', 'password',
     ];
+
+    /**
+     * Indicates if the IDs are auto-incrementing.
+     *
+     * @var bool
+     */
+    public $incrementing = false;
+
 
     /**
      * The attributes that should be hidden for arrays.

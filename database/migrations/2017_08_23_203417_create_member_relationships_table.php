@@ -15,6 +15,7 @@ class CreateMemberRelationshipsTable extends Migration
     {
         Schema::create('relationships', function (Blueprint $table) {
             $table->uuid('relationship_id');
+            $table->primary('relationship_id');
             $table->uuid('member_1_id');
             $table->uuid('member_2_id');
             $table->uuid('relationship_type_id');

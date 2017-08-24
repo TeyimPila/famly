@@ -13,8 +13,16 @@ use Illuminate\Database\Eloquent\Model;
 
 class Family extends Model
 {
+    use Uuids;
+
     protected $fillable = [
         'name', 'description', 'type'
     ];
 
+    /**
+     * Indicates if the IDs are auto-incrementing.
+     *
+     * @var bool
+     */
+    public $incrementing = false;
 }

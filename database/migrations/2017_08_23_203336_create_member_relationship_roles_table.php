@@ -15,6 +15,7 @@ class CreateMemberRelationshipRolesTable extends Migration
     {
         Schema::create('member_relationship_roles', function (Blueprint $table) {
             $table->uuid('role_id');
+            $table->primary('role_id');
             $table->enum('role', ['Sibling', 'Son', 'Mother', 'Father', 'Daughter', 'Sister', 'Brother']);
             $table->string('code')->index();
             $table->text('description');

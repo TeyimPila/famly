@@ -15,6 +15,7 @@ class CreateMembershipsTable extends Migration
     {
         Schema::create('memberships', function (Blueprint $table) {
             $table->uuid('membership_id');
+            $table->primary('membership_id');
             $table->uuid('family_id');
             $table->uuid('member_id');
             $table->string('type');

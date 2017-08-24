@@ -15,6 +15,7 @@ class CreateRelationshipTypesTable extends Migration
     {
         Schema::create('relationship_types', function (Blueprint $table) {
             $table->uuid('type_id');
+            $table->primary('type_id');
             $table->string('code')->index();
             $table->uuid('type', ['Marriage', 'Peer', 'Parental']);
             $table->text('description');
